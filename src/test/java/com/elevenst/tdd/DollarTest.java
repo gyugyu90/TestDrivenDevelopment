@@ -1,0 +1,17 @@
+package com.elevenst.tdd;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.Assert.*;
+
+
+public class DollarTest {
+
+    @Test
+    public void testMultiplication() {
+        Dollar five = new Dollar(5);
+        five.times(2);
+        assertEquals(10, five.amount);
+    }
+
+}
