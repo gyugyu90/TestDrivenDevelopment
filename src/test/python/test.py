@@ -99,6 +99,18 @@ class TestSuite:
         for test in self.tests:
             test.run(result)
 
+# self shunt
+class ResultListenerTest:
+    def testNotification(self):
+        self.count = 0
+        result = TestResult()
+        result.addListener(self)
+        WasRun("testMethod").run(result)
+        assert(1 == listener.count)
+
+    def startTest(self):
+        self.count = self.count + 1
+
 
 suite = TestSuite()
 suite.add(TestCaseTest("testTemplateMethod"))
